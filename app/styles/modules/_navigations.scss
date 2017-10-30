@@ -1,0 +1,51 @@
+.add-manu {
+	background-color: $light-gray;
+	border-bottom: 1px solid darken($main-menu-bc-color, 10%);
+	
+	.add {
+		padding: 14px;
+
+		.add__container {
+			margin: 0 auto;
+			text-align: center;
+			
+			input, select {
+				border: 1px solid darken($main-menu-bc-color, 10%);
+				background-color: $white;
+				margin-right: 10px;
+				font-size: $font-small;
+				border-radius: 5px;
+				transition: border 0.3s;
+				@media all and (max-width: $break-super-small) {margin-right: 0px;} //480px
+			}
+
+			.add__type {
+				width: 55px;
+				height: 44px;
+				font-weight: $fw-regular;	
+			}
+			
+			.add__description,
+			.add__value {
+				padding: 12px 15px;
+				width: 30%;
+			}
+			
+			.add__btn {
+				font-size: $font-large;
+				padding: 11px;
+				background: none;
+				border: 1px solid darken($main-menu-bc-color, 10%);
+				cursor: pointer;
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 1.1;
+				transition: 0.2s ease-in-out;
+				&:hover {
+					background-color: $income-color;
+					color: $white;
+				}
+			}
+		}
+	}
+}

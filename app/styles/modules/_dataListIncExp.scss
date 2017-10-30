@@ -1,0 +1,57 @@
+.income {
+	max-width: 731px;
+    margin: 0 auto;
+	margin-bottom: 60px;
+	@media all and (max-width: $break-small) { 
+		width: 100%; 
+		margin-right: 0;
+		margin-bottom: 50px;
+	} //736px
+	
+	h2 { 
+		margin-bottom: 20px;
+	}
+	
+	.item {
+		padding: 13px;
+		border-bottom: 1px solid darken($main-menu-bc-color, 10%);
+		position: relative;
+		&:first-child { border-top-left-radius: 5px; border-top-right-radius: 5px; }
+		&:last-child { border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;}
+
+		
+		.item__description {float: left;}
+		
+		.right {
+			&:hover {
+				.item__value {transform: translateX(-20px);}
+				.item__delete {display: block;}
+			}
+			
+			.item__value {
+				float: left;
+				transition: transform 0.3s;
+			}
+
+			.item__delete {
+				float: right;
+				display: none;
+				font-size: 95%;
+				@media all and (max-width: $break-small) {
+					display: block;
+					margin-left: 25px;
+				} //736px
+
+				.item__delete--btn {
+					background: none;
+					border: none;
+					cursor: pointer;
+					display: inline-block;
+					vertical-align: middle;
+					line-height: 1;
+				}
+			}
+		}
+
+	}
+}

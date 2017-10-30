@@ -1,0 +1,95 @@
+header {
+	@include backgroundImage('../img/back.png', rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35), auto, bottom, inherit, 275px);
+    position: relative;
+	
+	.budget {
+		position: absolute;
+		width: 350px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: $white;
+		@media all and (max-width: $break-super-small) {width: 90%;} //480px
+		
+		.budget__title {
+			font-size: $font-large;
+			text-align: center;
+			margin-bottom: 10px;
+			font-weight: $fw-light;
+		}
+		
+		.budget__value {
+			font-weight: $fw-light;
+			font-size: $font-super-large;
+			text-align: center;
+			margin-bottom: 25px;
+			letter-spacing: 2px;
+		}
+		
+		.budget__income {
+			padding: 12px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			background-color: $income-color;
+			border-radius: 5px;
+			
+			.budget__income--text {
+				float: left;
+				font-size: $font-small;
+				color: $white;
+				margin-top: 2px;
+			}
+			
+			.right {
+				
+				.budget__income--value {
+					letter-spacing: 1px;
+					float: left;
+				}
+				
+				.budget__income--percentage {
+					float: left;
+					width: 34px;
+					font-size: $font-extra-small;
+					padding: 3px 0;
+					margin-left: 10px;
+				}
+			}
+		}
+		
+		.budget__expenses {
+			padding: 12px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			background-color: $expenses-color;
+			border-radius: 5px;
+			
+			.budget__expenses--text {
+				float: left;
+				font-size: $font-small;
+				color: $white;
+				margin-top: 2px;
+			}
+			
+			.right {
+				
+				.budget__expenses--value {
+					letter-spacing: 1px;
+					float: left;
+				}
+				
+				.budget__expenses--percentage {
+					float: left;
+					width: 34px;
+					font-size: $font-extra-small;
+					padding: 3px 0;
+					margin-left: 10px;
+					background-color: rgba(255, 255, 255, 0.2);
+					text-align: center;
+					border-radius: 3px;
+				}
+			}
+		}
+
+	}
+}

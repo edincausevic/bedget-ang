@@ -1,0 +1,61 @@
+
+// COLORS
+
+$turquise: #28B9B5;
+$red: #FF5049;
+$dark-gray: #555;
+$medium-gray: #f7f7f7;
+$middle-gray: #eaeaea;
+$light-gray: #f7f7f7;
+$white: #ffffff;
+
+$income-color: $turquise;
+$expenses-color: $red;
+$base-color: $dark-gray;
+$main-menu-bc-color: $light-gray;
+
+// FONTS
+
+$open-sans: 'Open Sans', sans-serif;
+$main-font: $open-sans;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-semi-bold: 600;
+
+$base-font-size: 16px;
+
+$font-super-large: 2.875rem; //46px
+$font-extra-large: 2.188rem; //35px
+$font-large: 1.125rem; //18px
+$font-normal: 1rem; //16px
+$font-small: 14px;
+$font-extra-small: 11px;
+
+$font-super-large-px: 46px;
+$font-extra-large-px: 35px;
+$font-large-px: 18px;
+$font-normal-px: 16px;
+
+
+
+// MEASUREMENTS
+
+$max-width: 980px;
+
+
+// RESPONSIVE
+
+$break-super-large: 1690px;
+$break-large:       1280px;
+$break-medium:      980px;
+$break-small:       736px;
+$break-super-small: 480px;
+
+//@media all and (max-width: $break-super-large) {} //1690px
+//@media all and (max-width: $break-large) {} //1280px
+//@media all and (max-width: $break-medium) {} //980px
+//@media all and (max-width: $break-small) {} //736px
+//@media all and (max-width: $break-super-small) {} //480px
+
+

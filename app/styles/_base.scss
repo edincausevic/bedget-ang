@@ -1,0 +1,19 @@
+
+*, *:before, *:after {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+*:focus {outline: none;}
+
+body {
+    color: $base-color;
+	background-color: $white;
+}
+
+section { 
+	margin-top: 60px;
+	@media all and (max-width: $break-medium) { padding: 0 15px;} //980px
+}

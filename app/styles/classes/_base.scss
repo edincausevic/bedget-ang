@@ -1,0 +1,9 @@
+
+.clearfix { @include clearfix;}
+.right { float: right; }
+.container {
+    width: $max-width;
+	margin: 0 auto;
+	
+	@media all and (max-width: $break-medium) { width: 100%; } //980px
+}

@@ -1,0 +1,12 @@
+
+
+.red { color: $red !important; }
+.red-focus:focus { border: 1px solid $red !important; }
+
+.income-color {color: $income-color; }
+.expenses-color {color: $expenses-color;}
+
+.errorBorder { border: 1px solid $red!important; }
+
+.income-col-back { background-color: $income-color; color: $white; }
+.expenses-col-back { background-color: $expenses-color; color: $white; }

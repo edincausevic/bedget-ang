@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="budgetApp">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="css/styles.css">
+        <title>Budgety</title>
+    </head>
+    <body ng-controller="mainController">
+   
+        <header>
+            <div class="budget">
+                <div class="budget__title">
+                    Available Budget in <span class="budget__title--month">{{ thisMonth }}</span>
+                </div>
+                
+                <div class="budget__value">{{ avaliableBudget.overall }} {{currency}}</div>
+                
+                <div class="budget__income clearfix">
+                    <div class="budget__income--text">Income</div>
+                    <div class="right">
+                        <div class="budget__income--value">{{ avaliableBudget.income}} {{currency}}</div>
+                        <div class="budget__income--percentage">&nbsp;</div>
+                    </div>
+                </div>
+                
+                <div class="budget__expenses clearfix">
+                    <div class="budget__expenses--text">Expenses</div>
+                    <div class="right clearfix">
+                        <div class="budget__expenses--value">{{ avaliableBudget.expenses }} {{currency}}</div>
+                        <div class="budget__expenses--percentage">{{ avaliableBudget.expensesPercentage }}%</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="add-manu">
+			<nav class="add container">
+				<form class="add__container" 
+				      ng-submit="addBudgetData(addData)" 
+				      name="addBudget"
+				      novalidate>
+				      
+					<select class="add__type" 
+							ng-model="addData.which">
+						<option value="inc" selected>+</option>
+						<option value="exp">-</option>
+					</select>
+					
+					<input type="text" 
+							class="add__description" 
+							placeholder="Add description" 
+							ng-model="addData.description"
+							name="descriptionText"
+							id="description"
+							ng-class="{'errorBorder': descriptionEempty}"
+							ng-keypress="descriptionEempty=false"
+							required>
+							
+					<input type="number" 
+				       	   class="add__value" 
+				       	   placeholder="Value"
+					       ng-model="addData.amount"
+					       name="amountNum"
+					       ng-class="{'errorBorder': amountEempty}"
+					       ng-keypress="amountEempty=false"
+					       required>
+					       
+					<input type="submit" class="add__btn" value="Add">
+				</form>
+			</nav>
+		</div>
+        
+        <section>
+            <div class="container clearfix">
+                <div class="income">
+                    <h2>
+                    	<span class="income-color">Income</span> 
+                    	<span>&</span> 
+                    	<span class="expenses-color">Expenses</span>
+                    </h2>  
+                    
+                    <div class="income__list">    
+						<div ng-repeat="item in listData | orderBy:'-'"
+							 class="item clearfix" 
+							 ng-class="{'income-col-back': item.which === 'inc', 'expenses-col-back': item.which === 'exp'}"
+							 title="{{item.description}} - {{item.date}}">
+							<div class="item__description">{{item.description | textLength:25}}</div>
+							<div class="right clearfix">
+								<div class="item__value"> 
+									<span ng-show="item.which === 'inc'">+ </span>
+									<span ng-show="item.which === 'exp'">- </span>
+												{{item.amount}} {{currency}}
+								</div>
+								<div class="item__delete" 
+									 ng-click="removeItem(item)">
+									<button class="item__delete--btn"><i class="fa fa-times-circle"></i></button>
+								</div>
+							</div>
+						</div>  
+                    </div>
+                </div>
+             
+            </div>
+            
+            
+        </section>
+
+ 		<script src="js/app.min.js"></script>
+    </body>
+</html>

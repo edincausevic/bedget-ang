@@ -1,0 +1,12 @@
+// BACKGROUND IMAGE
+
+// Example: 
+// backgroundImage('img/img.jpg', rgba(27, 32, 44, 0.99), rgba(10, 12, 19, 0.99), cover, center, fixed, 662px); 
+
+@mixin backgroundImage($url, $lg1, $lg2, $bg-size, $bg-pos, $bg-attach, $height) {
+    background-image: linear-gradient($lg1, $lg2), url($url);
+    background-size: $bg-size;
+    background-position: $bg-pos;
+    background-attachment: $bg-attach;
+    height: $height;
+}
