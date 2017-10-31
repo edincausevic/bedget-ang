@@ -109,11 +109,18 @@ describe('Testing Home Controller', function(){
 	it('Should remove item from listData and update available budget', function(){
 		
 		scope.listData = [
-			{which: 'exp', description: 'test1', amount: 10},
-			{which: 'exp', description: 'test2', amount: 20},
-			{which: 'inc', description: 'test1', amount: 30}
+			{which: 'exp', description: 'Banana', amount: 10},
+			{which: 'exp', description: 'Apple', amount: 20},
+			{which: 'inc', description: 'Avocado', amount: 30}
 		];
 		
+		expect(scope.listData.length).toBe(3);
 		
+		scope.removeItem(scope.listData[0]);
+		
+		expect(scope.listData.length).toBe(2);
+		expect(scope.listData[0].which).toBe('exp');
+		expect(scope.listData[0].description).toBe('Apple');
+		expect(scope.listData[0].amount).toEqual(20);
 	});
 });
