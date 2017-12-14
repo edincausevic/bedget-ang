@@ -1,3 +1,3 @@
 # bedget-ang
 
-AngularJS Unit Test - not finished
+AngularJS Unit Test 
